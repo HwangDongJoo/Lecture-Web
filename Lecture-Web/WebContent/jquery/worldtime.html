@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		float:left;
+	}
+	p{
+		font-size : 20px;
+	}
+	[src$=png] {
+		position:absolute;
+		width:20px;
+	}
+	#seoul{
+		left:600px;
+		top:320px;
+	}
+	#london{
+		left:87px;
+		top:251px;
+	}
+	#moskva{
+		left:247px;
+		top:230px;
+	}
+	#paris{
+		left:95px;
+		top:274px;
+	}
+	#beijing{
+		left:558px;
+		top:311px;
+	}
+	#sydney{
+		left:682px;
+		top:605px;
+	}
+	#tokyo{
+		left:655px;
+		top:329px;
+	}
+	#vancouver{
+		left:1019px;
+		top:231px;
+	}
+	#newyork{
+		left:1208px;
+		top:322px;
+	}
+	#la{
+		left:1044px;
+		top:323px;
+	}
+	#saopaulo{
+		left:1326px;
+		top:566px;
+	}
+	#capetown{
+		left:170px;
+		top:621px;
+	}
+</style>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script src="http://momentjs.com/downloads/moment.js"></script>
+<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+<script>
+
+	function setTimer(){
+		var Now = moment().locale('ko');
+		var date = Now.format('YYYY MM DD');
+		var day = Now.format('dddd');
+		var time = Now.format('hh:mm:ss a');
+		
+		$('#city').text("도시 : 서울");
+		$('#date').text("날짜 : " + date);
+		$('#day').text("요일 : " + day);
+		$('#time').text("시간 : " + time);
+	}
+	
+	$(document).ready(function(){
+		
+		$('body').click(function(event){
+			//var position = $(this).position();
+			console.log("x : " + event.pageX + ", y : " + event.pageY );
+		});
+				
+		setTimer();
+		setTimer = setInterval(function setTimer(){
+			var Now = moment().locale('ko');
+			var date = Now.format('YYYY MM DD');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 서울");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+		}, 1000);
+		
+		$('#seoul').click(function(event){
+			/* console.log($('#city').text()+"서울");
+			console.log(date);
+			console.log(day);
+			console.log(time); */
+			clearInterval(setTimer);
+			
+			$('#city').text("도시 : 서울");
+			var Now = moment().locale('ko');
+			var date = Now.format('YYYY MM DD');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			setTimer = setInterval(function(){
+				Now = moment().locale('ko');
+				date = Now.format('YYYY MM DD');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1);
+		});
+		$('#london').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(0).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			$('#city').text("도시 : 런던");
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(0).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#moskva').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(3).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 모스크바");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(3).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#paris').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(1).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 파리");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(1).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#beijing').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(8).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 베이징");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(8).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#tokyo').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(9).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 도쿄");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(9).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#sydney').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(10).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 시드니");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(10).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#vancouver').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(-8).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 벤쿠버");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				var Now = moment().utc().utcOffset(-8).locale('ko');
+				var date = Now.format('YYYY년 MM월 DD일');
+				var day = Now.format('dddd');
+				var time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#newyork').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(-5).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 뉴욕");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(-5).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#la').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(-8).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : LA");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(-8).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#saopaulo').click(function(event){
+			clearInterval(setTimer);
+			
+			var Now = moment().utc().utcOffset(-3).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 상파울루");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(-3).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+		$('#capetown').click(function(event){
+			clearInterval(setTimer);	//인터벌 중지 시키는 함수
+			
+			var Now = moment().utc().utcOffset(2).locale('ko');
+			var date = Now.format('YYYY년 MM월 DD일');
+			var day = Now.format('dddd');
+			var time = Now.format('hh:mm:ss a');
+			
+			$('#city').text("도시 : 캐이프타운");
+			$('#date').text("날짜 : " + date);
+			$('#day').text("요일 : " + day);
+			$('#time').text("시간 : " + time);
+			
+			setTimer = setInterval(function(){
+				Now = moment().utc().utcOffset(2).locale('ko');
+				date = Now.format('YYYY년 MM월 DD일');
+				day = Now.format('dddd');
+				time = Now.format('hh:mm:ss a');
+				
+				$('#date').text("날짜 : " + date);
+				$('#day').text("요일 : " + day);
+				$('#time').text("시간 : " + time);
+			}, 1000);
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="map">
+		<img id="worldmap" src="img/worldmap.gif">
+		<img id="seoul" src="img/star.png">
+		<img id="london" src="img/star.png">
+		<img id="moskva" src="img/star.png">
+		<img id="paris" src="img/star.png">
+		<img id="beijing" src="img/star.png">
+		<img id="sydney" src="img/star.png">
+		<img id="tokyo" src="img/star.png">
+		<img id="vancouver" src="img/star.png">
+		<img id="newyork" src="img/star.png">
+		<img id="la" src="img/star.png">
+		<img id="saopaulo" src="img/star.png">
+		<img id="capetown" src="img/star.png">
+	</div>
+	<div>
+		<p id="city">도시 : </p><br/>
+		<p id="date">날짜 : </p><br/>
+		<p id="day">요일 : </p><br/>
+		<p id="time">시간 : </p><br/>
+	</div>
+</body>
+</html>

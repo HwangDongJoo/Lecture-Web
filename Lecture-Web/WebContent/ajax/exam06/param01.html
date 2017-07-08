@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script>
+	//비동기로 서버에 param03.jsp?name=홍길동&age=25 요청
+	$(document).ready(function(){
+		$(':button').click(function(){
+			$.ajax({
+				url: 'param03.jsp',
+				type: 'post',
+				//data: 'name=홍길동&age=25',
+				data: {'name':'홍길동', 'age':25},
+				success: callback
+			});
+		});
+	});
+	
+	function callback(data){
+		alert('수신성공');
+		$('#debug').val(data);
+	}
+</script>
+</head>
+<body>
+	<textarea rows="10" cols="80" id="debug"></textarea><br/>
+	이름 : <input type="text" name="name"/><br/>
+	나이 : <input type="text" name="age"/><br/>
+	<button>호출</button>
+</body>
+</html>

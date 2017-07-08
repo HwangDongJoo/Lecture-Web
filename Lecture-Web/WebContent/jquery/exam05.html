@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		//alert("ready");
+		//$(':button').hide();
+		//$('button').hide();
+		//$('input:button').hide();
+		
+		$(':button').click(function(){
+			//$('h1').hide();
+			$(this).hide();
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>-----------------------------------------</h1>
+	<input type="button" value="버튼1"/>
+	<button>버튼2</button>
+	<h1>-----------------------------------------</h1>
+</body>
+</html>

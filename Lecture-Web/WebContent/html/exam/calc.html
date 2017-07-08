@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	window.onload = function(){
+		num1=0;
+	}
+	
+	function getNum(a){		
+		//document.all.inputText.value += a;
+		var monitor = document.getElementById('inputText');
+		
+		monitor.value += a;
+	}
+	
+	function setClear(){
+		document.all.inputText.value = "";
+	}
+	
+	function getAnswer(){
+		console.log(num1);
+		document.all.inputText.value = eval(num1 + document.all.inputText.value);
+	}
+	
+	function getCal(cal){
+		num1 = document.all.inputText.value;
+		if(cal=='%'){
+			num1 += '/100';
+		} else {
+			num1 += cal;
+		}
+		document.all.inputText.value = "";
+	}
+
+</script>
+<style type="text/css">
+	button{
+		width: 100%
+	}
+</style>
+</head>
+<body>
+<table border="1">
+	<tr>
+		<td colspan=4><input type="text" name="inputText" id="inputText" readonly="readonly" /></td>
+	</tr>
+	<tr align="center">
+		<td><button onclick="getNum(this.value)" value="7">7</button></td>
+		<td><button onclick="getNum(8)" value="8">8</button></td>
+		<td><button onclick="getNum(9)" value="9">9</button></td>
+		<td><button onclick="getCal('/')">/</button></td>
+	</tr>
+	<tr align="center">
+		<td><button onclick="getNum(4)" value="4">4</button></td>
+		<td><button onclick="getNum(5)" value="5">5</button></td>
+		<td><button onclick="getNum(6)" value="6">6</button></td>
+		<td><button onclick="getCal('*')">*</button></td>
+	</tr>
+	<tr align="center">
+		<td><button onclick="getNum(1)" value="1">1</button></td>
+		<td><button onclick="getNum(2)" value="2">2</button></td>
+		<td><button onclick="getNum(3)" value="3">3</button></td>
+		<td><button onclick="getCal('-')">-</button></td>
+	</tr>
+	<tr align="center">
+		<td><button onclick="getNum(0)" value="0">0</button></td>
+		<td><button onclick="getNum(.)" value=".">.</button></td>
+		<td><button onclick="getCal('+')">+</button></td>
+		<td><button onclick="getCal('%')">%</button></td>
+	</tr>
+	<tr align="center">
+		<td colspan=2><button onclick="getAnswer()">=</button></td>
+		<td colspan=2><button onclick="setClear()">clear</button></td>
+	</tr>
+	
+</table>
+</body>
+</html>

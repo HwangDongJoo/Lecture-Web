@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		float:left;
+		width:100px;
+		height:100px;
+		text-align: center;
+	}
+	
+	#day0{
+		background : red;
+	}
+	
+	#day1{
+		background : orange;
+	}
+	
+	#day2{
+		background : yellow;
+	}
+	
+	#day3{
+		background : green;
+	}
+	
+	#day4{
+		background : blue;
+	}
+	
+	#day5{
+		background : navy;
+	}
+	
+	#day6{
+		background : purple;
+	}
+</style>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+				
+		$('#day0').hover(function(){
+			//console.log(a);
+			$(this).animate({
+				'width':'200px',
+				'height':'200px'
+			});
+			$(this).text('일요일');
+		}, function(){
+			$(this).animate({
+				'width':'100px',
+				'height':'100px'
+			});
+			$(this).text('일');
+		});
+		
+		$('#day1').hover(function(){
+			//console.log(a);
+			$(this).animate({
+				'width':'200px',
+				'height':'200px'
+			});
+			$(this).text('월요일');
+		}, function(){
+			$(this).animate({
+				'width':'100px',
+				'height':'100px'
+			});
+			$(this).text('월');
+		});
+		$('#day2').hover(function(){
+			//console.log(a);
+			$(this).animate({
+				'width':'200px',
+				'height':'200px'
+			});
+			$(this).text('화요일');
+		}, function(){
+			$(this).animate({
+				'width':'100px',
+				'height':'100px'
+			});
+			$(this).text('화');
+		});
+		$('#day3').hover(function(){
+			//console.log(a);
+			$(this).animate({
+				'width':'200px',
+				'height':'200px'
+			});
+			$(this).text('수요일');
+		}, function(){
+			$(this).animate({
+				'width':'100px',
+				'height':'100px'
+			});
+			$(this).text('수');
+		});
+		$('#day4').hover(function(){
+			//console.log(a);
+			$(this).animate({
+				'width':'200px',
+				'height':'200px'
+			});
+			$(this).text('목요일');
+		}, function(){
+			$(this).animate({
+				'width':'100px',
+				'height':'100px'
+			});
+			$(this).text('목');
+		});
+		$('#day5').hover(function(){
+			//console.log(a);
+			$(this).animate({
+				'width':'200px',
+				'height':'200px'
+			});
+			$(this).text('금요일');
+		}, function(){
+			$(this).animate({
+				'width':'100px',
+				'height':'100px'
+			});
+			$(this).text('금');
+		});
+		$('#day6').hover(function(){
+			//console.log(a);
+			$(this).animate({
+				'width':'200px',
+				'height':'200px'
+			});
+			$(this).text('토요일');
+		}, function(){
+			$(this).animate({
+				'width':'100px',
+				'height':'100px'
+			});
+			$(this).text('토');
+		});
+	});
+</script>
+</head>
+<body>
+<div id='day0'>일</div>
+<div id='day1'>월</div>
+<div id='day2'>화</div>
+<div id='day3'>수</div>
+<div id='day4'>목</div>
+<div id='day5'>금</div>
+<div id='day6'>토</div>
+</body>
+</html>

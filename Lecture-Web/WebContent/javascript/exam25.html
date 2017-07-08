@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Person(name, phone, addr){
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+		this.info = function(){
+			var list = "";
+			for(key in this){
+				if(key != 'info')
+					list += key + " : " + this[key] + '\n';
+			}
+			alert(list);
+		};
+	}
+	
+	var a = new Person("홍길동", "010-5468-3248", "강남");
+	a.info();
+	
+	var person2 = new Person();
+	person2.info();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

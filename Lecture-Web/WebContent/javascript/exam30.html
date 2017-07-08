@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	JSON.stringify()	: 자바스크립트객체값을 문자열로 반환
+ 	JSON.parse()		: 문자열을 자바스크립트 객체값으로 변환
+ */
+ 
+ 	var person = {
+ 		"name" : "홍길동",
+ 		"phone" : "010-6572-5462",
+ 		"addr" : "인천시 서구"
+	};
+ 	
+ 	var strPerson = JSON.stringify(person);
+ 	
+ 	console.log(strPerson);
+ 	//console.log(typeof JSON.parse(strPerson));
+ 	
+ 	var obj = JSON.parse(strPerson);
+ 	console.log(obj);
+ 	
+ 	document.write("name : " + obj.name + "<br/>");
+ 	document.write("phone : " + obj.phone + "<br/>");
+ 	document.write("addr : " + obj.addr + "<br/>");
+ 	
+ 	var str = "{\"name\" : \"홍길동\"}";
+ 	var obj02 = JSON.parse(str);
+ 	//obj02 = JSON.parse(str);
+ 	console.log(obj02);
+</script>
+</head>
+<body>
+
+</body>
+</html>

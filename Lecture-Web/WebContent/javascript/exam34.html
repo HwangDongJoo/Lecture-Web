@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//var str = "hello JAVASCRIPT";
+	var str = new String("hello JAVASCRIPT!!");
+	
+	String.prototype.changeStr = function(){
+		
+		return this.bold().toUpperCase().fontcolor('red').fontsize('15pt').link('http://www.daum.net');
+	};
+	
+	document.write(str + '<br/>');
+	document.write(str.changeStr() + '<br/>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

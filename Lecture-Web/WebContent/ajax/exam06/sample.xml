@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<members>
+	<member>
+		<id>hong</id>
+		<name>홍길동</name>
+	</member>
+	<member>
+		<id>dong</id>
+		<name>동동동</name>
+	</member>
+	<member>
+		<id>go</id>
+		<name>고길동</name>
+	</member>
+</members>

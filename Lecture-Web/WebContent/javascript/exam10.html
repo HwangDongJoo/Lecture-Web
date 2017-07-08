@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var array = ['A', 10, 12.34, true, "ABC", null, '~'];
+	
+	document.write('첫번째 요소 : ' + array[0] +'<br/>');
+	document.write('두번째 요소 : ' + array[1] +'<br/>');
+	document.write('세번째 요소 : ' + array[2] +'<br/>');
+	document.write('네번째 요소 : ' + array[3] +'<br/>');
+	document.write('5번째 요소 : ' + array[4] +'<br/>');
+	document.write('6번째 요소 : ' + array[5] +'<br/>');
+	document.write('7번째 요소 : ' + array[6] +'<br/>');
+	
+	document.write('array : ' + array +'<br/>');
+	
+	array[7] = "add";
+	
+	document.write('add 추가 후 array : ' + array +'<br/>');
+	
+	document.write('배열의 원소개수 : ' + array.length +'<br/>');
+	
+	array[10] = "end";
+	
+	document.write('end 추가 후 array : ' + array +'<br/>');
+	
+	document.write('배열의 원소개수 : ' + array.length +'<br/>');
+	
+	array.push("추가...");
+	document.write('array : ' + array +'<br/>');
+	document.write('배열의 원소개수 : ' + array.length +'<br/>');
+	
+	var temp = array.pop();
+	document.write('삭제된 원소 : ' + temp+'<br/>');
+	document.write('array : ' + array +'<br/>');
+	document.write('배열의 원소개수 : ' + array.length +'<br/>');
+	document.write(typeof array + '<br/>');
+	
+	
+	var str = "Hello world!!!!";
+	document.write('str : ' + str + '<br/>');
+	document.write('문자열의 길이' + str.length + '<br/>');
+	
+	var arrays = new Array();
+	document.write('arrays의 원소개수' + arrays.length + '<br/>');
+	
+	arrays = new Array(100, 'Hello', 23.456);
+	document.write('arrays의 원소개수' + arrays.length + '<br/>');
+	document.write('arrays : ' + arrays + '<br/>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

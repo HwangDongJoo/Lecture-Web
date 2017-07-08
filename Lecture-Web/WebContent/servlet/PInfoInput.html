@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function cancel(){
+		var form = document.joinForm;
+		form.name.value="";
+		form.id.value="";
+		form.password.value="";
+		for(var i=0; i<2; i++){
+			if(form.gender[i].checked==true)
+				form.gender[i].checked=false;
+		}
+		form.mail.checked=false;
+		form.adMail.checked=false;
+		form.delMail.checked=false;
+		form.job.selectedIndex=0;
+	}
+	
+	function checkForm(){
+		var form = document.joinForm;
+		if(form.name.value==""){
+			alert("이름을 입력하세요.");
+			return false;
+		}
+		if(form.id.value==""){
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+		if(form.password.value==""){
+			alert("패스워드를 입력하세요.");
+			return false;
+		}
+		if(form.gender.value==""){
+			alert("성별을 선택하세요");
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+<form action="/Lecture-Web/pinfoResult" method="post" onsubmit="return checkForm()" name="joinForm">
+	<h2>개인 정보 입력</h2>
+	이름 : <input type="text" name="name" /><br/>
+	아 이 디 : <input type="text" name="id" /><br/>
+	패스워드 : <input type="password" name="password" /><br/>
+	<br/>
+	성별 : 
+	남 <input type="radio" name="gender" value="남"/>
+	여 <input type="radio" name="gender" value="여"/><br/>
+	<br/>
+	메일 수신 여부 : 
+		공지 메일 <input type="checkbox" name="mail"/>
+		광고 메일 <input type="checkbox" name="adMail"/>
+		배송 확인 메일 <input type="checkbox" name="delMail"/>
+	<br/><br/>
+	직 업 : 
+	<select name="job">
+		<option value="회사원">회사원</option>
+		<option value="학생">학생</option>
+		<option value="기타">기타</option>
+	</select>
+	
+	<br/><br/>
+	<input type="button" value="취소 " onclick="cancel()" />
+	<input type="submit" value="확인 "/>
+</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function testFunction(){
+		alert('call......');
+	}
+	
+	function testFunction1(data){
+		alert('data : ' + data);
+	}
+	
+	function testFunction2(a, b){
+		alert('a : ' + a + ' b : ' + b);
+	}
+	
+	testFunction();
+	testFunction1('a');
+	testFunction2('A', 'B');
+	
+	function sum(a,b){
+		return a+b;
+	}
+	
+	var total = sum(10, 20);
+	alert("총합 : " + total);
+	
+	var temp = function func(){
+					alert('call func()...');
+				}
+	
+	temp();
+	
+	var func01 = function(){
+		
+		alert('call func01()....');
+	}
+	
+	func01();
+	
+	function callFunc(f) {
+		f();
+		
+	}
+	
+	callFunc(testFunction);
+	
+	function printSum(a,b){
+		var s = 0;
+		while(a<=b){
+			s += a++;
+		}
+		alert(a + ' ~ ' + b + '사이의 총합 : ' + s);
+	}
+	
+	printSum(1,10); 
+	
+	function sum(a,b){
+		var s = 0;
+		while(a<=b){
+			s += a++;
+		}
+		return s;
+	}
+	alert(a + ' ~ ' + b + '사이의 총합 : ' + window.sum(a,b));
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

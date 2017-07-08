@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		alert('ready');
+		//$('tr').css('background', 'yellow');
+		$('tr:even').css('background', 'yellow');
+		$('tr:odd').css('background', '#98ce62');
+	});
+</script>
+</head>
+<body>
+	<h2>회원명부</h2>
+	<table border="1">
+		<tr>
+			<th>이름</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-9456-6783</td>
+		</tr>
+		<tr>
+			<td>고길동</td>
+			<td>010-2347-5575</td>
+		</tr>
+		<tr>
+			<td>도우너</td>
+			<td>010-5431-1175</td>
+		</tr>
+		<tr>
+			<td>마이콜</td>
+			<td>010-6572-3244</td>
+		</tr>
+		<tr>
+			<td>고영희</td>
+			<td>010-3354-5575</td>
+		</tr>
+		<tr>
+			<td>고철수</td>
+			<td>010-1255-5575</td>
+		</tr>
+		<tr>
+			<td>고희동</td>
+			<td>010-6872-5575</td>
+		</tr>
+	</table>
+</body>
+</html>

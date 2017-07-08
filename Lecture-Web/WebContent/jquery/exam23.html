@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#ancester * {
+		border : 1px solid red;
+		display: block;
+		padding: 10px;
+		margin: 10px;
+	}
+</style>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		//$('span').parent().css('border', '1px solid blue');
+		//$('span').parent().parent().css('border', '1px solid blue');
+		//$('span').parents().css('border', '1px solid blue');
+		//$('span').parents('div').css('border', '1px solid blue');
+		//$('span').parentsUntil('div').css('border', '1px solid blue');
+		
+		//$('#ancester').children().css('border', '5px solid blue');
+		//$('#ancester').children('#div02').css('border', '5px solid blue');
+		//$('#ancester').children('ul').css('border', '5px solid blue');
+		//$('#ancester').find('ul').css('border', '5px solid blue');
+		//$('#ancester').find('*').css('border', '5px solid blue');
+		$('#ancester').children().last().css('border', '5px solid blue');
+		//$('#ancester').find('span').last().css('border', '5px solid blue');
+
+	});
+</script>
+</head>
+<body>
+	<div id="ancester">
+		<div id="div01">div1
+			<ul>ul
+				<li>li
+					<span>span</span>
+				</li>
+			</ul>
+		</div>
+		<div id="div02">div2
+			<p>p
+				<span>span</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

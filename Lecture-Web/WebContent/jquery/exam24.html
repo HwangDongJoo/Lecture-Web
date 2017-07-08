@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body * {
+		border : 1px solid red;
+		display: block;
+		padding: 10px;
+		margin: 10px;
+	}
+</style>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		//$('h2').siblings().css('border', '5px solid blue');		//h2와 같은 레벨에 있는 모든 태그들의 색이 바뀐다.
+		//$('h2').siblings('h3').css('border', '5px solid blue');		//h2와 같은 레벨에 있는 h3 태그들의 색이 바뀐다.
+		//$('h3').next().css('border', '5px solid blue');		//h3와 같은 레벨에 있으며 h3 뒤에 있는 태그의 색이 바뀐다.
+		//$('h3').prev().css('border', '5px solid blue');		//h3와 같은 레벨에 있으며 h3 앞에 있는 태그의 색이 바뀐다.
+		//$('h1').nextUntil('p').css('border', '5px solid blue');		//h1와 같은 레벨에 있으며 h1 ~ p 태그사이에 있는 태그의 색이 바뀐다.
+		//$('h1').nextAll().css('border', '5px solid blue');		//h1와 같은 레벨에 있으며  h1 뒤에 있는 모든 태그의 색이 바뀐다.
+		//$('h1').prevAll().css('border', '5px solid blue');		//h1와 같은 레벨에 있으며  h1 앞에 있는 모든 태그의 색이 바뀐다.
+		//$('div').eq(1).css('border', '5px solid blue');		//div태그들 중에 2번째 div태그의 색이 바뀐다.
+		//$('div > *').eq(2).css('border', '5px solid blue');		//div태그들의 하위 레벨에 있는 2번째 태그의 색이 바뀐다.
+		//$('div > p').eq(2).css('border', '5px solid blue');		//div태그들의 하위 레벨에 있는 2번째 p태그의 색이 바뀐다.
+		//$('div > *').not('p').css('border', '5px solid blue');		//div태그들의 하위 레벨에 있는 태그들중에 p태그들만 빼고 색이 바뀐다.
+		$('div > *').filter('p').css('border', '5px solid blue');		//div태그들의 하위 레벨에 있는 태그들중에 p태그들만 색이 바뀐다.
+	});
+</script>
+</head>
+<body>
+	<div>div1
+		<p>p-1</p>
+		<span>span</span>
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p-2</p>
+	</div>
+	<div>div2
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p2-1</p>
+	</div>
+</body>
+</html>

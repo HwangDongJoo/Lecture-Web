@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+		브라우저 객체 모델(BOM)
+		window객체
+			- location 객체
+			- navigator 객체
+			- history 객체
+			- screen 객체 -> x,y
+			- document 객체
+	*/
+	
+	window.alert('hello');
+			
+	var sub = window.open("","","width=400, height=500");
+	if(!sub){
+		alert("팝업창 옵션을 확인하세요");
+	}
+	
+	sub.moveTo(100,100);
+	
+	setInterval(function(){
+		sub.moveBy(10,10);
+	},1000);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

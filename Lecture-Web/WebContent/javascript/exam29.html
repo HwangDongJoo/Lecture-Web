@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function Person(name, phone, addr){
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+	}
+	
+	Person.prototype.hobby = "영화감상";
+	
+	Person.prototype.info = function(){
+		var list = "";
+		for(key in this){
+			if(key != 'info')
+				list += key + " : " + this[key] + '\n';
+		}
+		alert(list);
+		console.log(list);
+	}
+	
+	function Doctor(name, phone, addr, major){
+		/* this.name = name;
+		this.phone = phone;
+		this.addr = addr; */
+		/* this.base = Person;
+		this.base(name, phone, addr);*/
+		
+		//Person.call(this, name, phone, addr);
+		Person.apply(this, arguments);
+		
+		this.major = major;
+		
+	}
+	
+	Doctor.prototype = Person.prototype;
+	
+	var person = new Person("홍길동", "010-6458-3127", "서울시 서초구");
+	person.info();
+	var doctor = new Doctor("이지금", "010-6589-4354", "서울시 강남구", "신경외과");
+	doctor.info();
+	
+	console.log(person instanceof Person);
+	console.log(doctor instanceof Doctor);
+	console.log(doctor instanceof Person);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var num = document.getElementById('count');
+	
+	function onClick(){
+		num++;
+		var str =  num + '번 클릭';
+		
+		document.span.write(str);
+	} 
+</script>
+</head>
+<body>
+	<!-- 버튼을 클릭할 때마다 숫자 증가 -->
+	<span id="count">0번 클릭</span><input type="button" value="클릭" onclick="onClick()"><br/>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	  #editor {
+	  	width:500px;
+	  	height:500px;
+	  	border:1px solid black;
+	  	overflow: scroll;
+	  }
+	  #menu {
+	  	width:500px;
+	  	background : lime;
+	  	text-align: center;
+	  }
+</style>
+<script src="/Lecture-Web/jquery/js/jquery-3.2.1.min.js"></script>
+<script>
+
+	$(document).ready(function(){		
+		$('button#btnSelectAll').click(function(){
+			document.execCommand('selectAll');
+		});
+		//bold
+		$('button#btnB').click(function(){
+			document.execCommand('bold');
+		});
+		//italic
+		$('button#btnI').click(function(){
+			document.execCommand('italic');
+		});
+		//underline
+		$('button#btnU').click(function(){
+			document.execCommand('underline');
+		})
+		
+		$('button#btnLeft').click(function(){
+			document.execCommand('justifyLeft');
+			//$('#editor').css('text-align', 'left');
+		});
+		
+		$('button#btnCenter').click(function(){
+			document.execCommand('justifyCenter');
+		});
+		
+		$('button#btnRight').click(function(){
+			document.execCommand('justifyRight');
+			
+		});
+		
+		//폰트 select
+		$('#selFont').change(function(){
+			var font = $(this).val();
+			document.execCommand('fontName', true, font);
+		});
+		
+		//글자크기 select
+		$('#selFontSize').change(function(){		
+			var size = $(this).val();
+			document.execCommand('fontSize', false, size);
+		});
+		
+		//글자색 select
+		$('#selTextColor').change(function(){		
+			var color = $(this).val();
+			document.execCommand('foreColor', true , color);
+		});
+		
+		//배경색 select
+		$('#selBackgroundColor').change(function(){
+			var color = $(this).val();
+			document.execCommand('backColor', true , color);
+		});
+		
+		$('#animation').animate({'color':'red'});
+		$('#animation').animate('font-color', 'green');
+		
+	});
+
+</script>
+</head>
+<body>
+	<div id="menu">
+		<div>
+			<button id="btnSelectAll">전체선택</button>
+			<button id="btnB">굵게</button>
+			<button id="btnI">기울임</button>
+			<button id="btnU">밑줄</button><br/>
+		</div>
+		<br/>
+		<div>
+			<button id="btnLeft">왼쪽정렬</button>
+			<button id="btnCenter">가운데정렬</button>
+			<button id="btnRight">오른쪽정렬</button><br/>
+		</div>
+		<br/>
+		<select id="selFont">
+			<option>폰트</option>
+			<option value="돋움">돋움</option>
+			<option value="굴림">굴림</option>
+			<option value="궁서">궁서</option>
+		</select>
+		<select id="selFontSize">
+			<option>크기</option>
+			<option value="1">5</option>
+			<option value="2">10</option>
+			<option value="3">15</option>
+			<option value="4">20</option>
+			<option value="5">25</option>
+			<option value="6">30</option>
+			<option value="7">35</option>
+		</select>
+		
+		<select id="selTextColor">
+			<option>글자색</option>
+			<option value="black">검정</option>
+			<option style="color:red;" value="red">빨강</option>
+			<option style="color:green;" value="green">초록</option>
+			<option style="color:blue;" value="blue">파랑</option>
+			<option style="color:yellow;" value="yellow">노랑</option>
+		</select>
+		<select id="selBackgroundColor">
+			<option>배경색</option>
+			<option value="white">흰색</option>
+			<option style="background:black; color:white;" value="black">검정</option>
+			<option style="background:red;" value="red">빨강</option>
+			<option style="background:green;" value="green">초록</option>
+			<option style="background:blue;" value="blue">파랑</option>
+			<option style="background:yellow;" value="yellow">노랑</option>
+		</select>
+		
+	</div>
+	<!-- <textarea rows="25" cols="100" ></textarea> -->
+	<div id="editor" contenteditable="true" ></div>
+	
+	<p id="animation">문서 편집기</p>
+</body>
+</html>

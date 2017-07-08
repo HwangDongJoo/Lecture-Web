@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var person = {
+		"name" : "홍길동",
+		"phone" : "010-1111-5655",
+		"addr" : "서울시 서초구 서초동",
+		"info" : function() {
+			 /* alert("name : " + this.name + "\n"
+					+ "phone : " + this.phone + "\n"
+					+ "addr : " + this.addr + "\n"); */ 
+			
+			/* var msg = '';
+			with(this){
+				msg += 'name : ' + name + "\n";
+				msg += 'phone : ' + phone + '\n';
+				msg += 'addr : ' + addr + '\n';
+			} 
+			alert(msg); */
+			
+			for(var key in this){
+				alert(key + " : " +this[key]);
+			}
+		}
+	};
+	
+	person.info();
+</script>
+</head>
+<body>
+
+</body>
+</html>

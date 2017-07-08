@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var nums = [10,20,30,40,50];
+	/*
+		0번째 변수 : 10
+		1번째 변수 : 20
+	*/
+	
+	for(var i=0; i<nums.length; i++){
+		document.write(i + "번째 변수 : " + nums[i] + "<br/>");
+	}
+	
+	document.write('<br/>');
+	
+	for(var i in nums){
+		document.write(i + "번째 변수 : " + nums[i] + "<br/>");
+	}
+	
+	document.write('<br/>');
+	
+	var copyNums = nums.map(function(element){
+		return element + 100;
+	});				//복사본이 만들어진다. 주소값은 다름
+	document.write(copyNums + "<br/>");
+	
+	nums.forEach(function(a,b){
+		document.write(b + "번째 변수 : " + (a+100) + '<br/>');
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>
